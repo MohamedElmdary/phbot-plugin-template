@@ -52,7 +52,7 @@ class Player(Dict):
     def __getitem__(self, key: Literal['dead']) -> bool: pass
 
     @overload
-    def __getitem__(self, key: Literal['items']) -> List[Item]: pass
+    def __getitem__(self, key: Literal['items']) -> List[Item | None]: pass
 
 def get_players() -> None | dict[int, Player]: pass
 
@@ -172,7 +172,7 @@ class Inventory(Dict):
     def __getitem__(self, key: Literal['size', 'gold']) -> int: pass
 
     @overload
-    def __getitem__(self, key: Literal['items']) -> List[Item]: pass
+    def __getitem__(self, key: Literal['items']) -> List[Item | None]: pass
 
 def get_inventory() -> None | Inventory: pass
 def get_storage() -> None | Inventory: pass
@@ -197,7 +197,7 @@ class Pet(Dict):
     def __getitem__(self, key: Literal['type']) -> Literal['none', 'fellow', 'horse', 'pick', 'transport', 'wolf']: pass
 
     @overload
-    def __getitem__(self, key: Literal['items']) -> List[Item]: pass
+    def __getitem__(self, key: Literal['items']) -> List[Item | None]: pass
 
 def get_pets() -> None | dict[int, Pet]: pass
 
