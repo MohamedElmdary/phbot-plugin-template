@@ -169,7 +169,7 @@ def get_academy() -> None | Academy: pass
 # Inventory
 class Inventory(Dict):
     @overload
-    def __getitem__(self, key: Literal['size, gold']) -> int: pass
+    def __getitem__(self, key: Literal['size', 'gold']) -> int: pass
 
     @overload
     def __getitem__(self, key: Literal['items']) -> List[Item]: pass
